@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Portfolio de Sebastián Brusca  
+**Administrador de Sistemas Jr. · Entusiasta de DevOps · Técnico en Hardware y Redes**
 
-## Getting Started
+Este portfolio fue creado con **Next.js 16 + TailwindCSS** y contiene animaciones modernas estilo Samsung, secciones con RevealOnScroll, carrusel automático de tecnologías y un diseño completamente optimizado tanto para escritorio como para móvil.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tecnologías del proyecto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js 16 (App Router)**
+- **React**
+- **TailwindCSS**
+- **Framer-like animations** (propias con IntersectionObserver)
+- **Tech Carousel automático**
+- **Fondo Aurora dinámico + partículas**
+- **Estructura modular**: /components, /app, /public
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 ¿Qué vas a encontrar en este portfolio?
 
-## Learn More
+### 🎯 Hero principal
+- Presentación con roles dinámicos que cambian automáticamente.  
+- Globo animado con información sobre mi entorno técnico.  
+- Fondo aurora con movimiento suave.
 
-To learn more about Next.js, take a look at the following resources:
+### 🛠 Tecnologías principales
+Carrusel automático con las herramientas que uso a diario en mi laboratorio:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Linux  
+- Docker  
+- Redes  
+- Portainer  
+- Playit  
+- SSH / Servicios 24/7  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 📌 Qué hago en este entorno
+- Levanto servicios 24/7  
+- Trabajo con contenedores  
+- Administro paneles y automatizo tareas  
+- Experimento con redes, accesos remotos y despliegues
 
-## Deploy on Vercel
+### 🧪 Mi laboratorio personal
+- Red local simulando un entorno de producción  
+- Servicios accesibles vía túneles  
+- Paneles de administración  
+- Práctica constante de despliegue y monitoreo  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🎓 Formación (extraída del CV)
+- DevOps + Microsoft Azure Fundamentals (Educación IT) – *Actualidad*  
+- Técnico Electromecánico – *Instituto La Salle*  
+- Cursos: Linux, Redes, Python, Power BI, Active Directory  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 💼 Experiencia (CV)
+- **Técnico de Soporte de TI – GEMEZ S.A.**  
+- **Carpintero en Diseño de Aluminio – 5 años**  
+- **Técnico en Hardware y Redes (Freelance)**  
+
+### 🧰 Habilidades técnicas
+- Linux (administración)  
+- Redes (DHCP, VLAN, VPN, Subnetting)  
+- AutoCAD 2D/3D  
+- Python  
+- Excel intermedio  
+- Diagnóstico y mantenimiento de hardware  
+- Ensamblaje y configuración de computadoras  
+
+---
+
+## 🏗 Estructura del proyecto
+
