@@ -7,9 +7,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Administrador de sistemas",
-  "Entusiasta de DevOps",
-  "Técnico en hardware y redes",
+  "Administrador de sistemas.",
+  "Entusiasta de DevOps.",
+  "Técnico en hardware y redes.",
 ];
 
 export default function HomePage() {
@@ -41,7 +41,7 @@ export default function HomePage() {
 
               <div className="space-y-2">
                 <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-                  Sebastián <span className="text-emerald-400">Brusca</span>
+                  Sebastián A. <span className="text-emerald-400">Brusca</span>
                 </h1>
                 <p className="text-base text-neutral-300 sm:text-lg">
                   Técnico Electromecánico · Estudiante de DevOps

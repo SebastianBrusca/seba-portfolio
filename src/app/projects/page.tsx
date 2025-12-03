@@ -1,225 +1,193 @@
 "use client";
 
-import Link from "next/link";
 import Layout from "@/components/Layout";
-import RevealOnScroll from "@/components/RevealOnScroll";
-import {
-  Code2,
-  Server,
-  GitBranch,
-  MonitorSmartphone,
-  Layers,
-  Network,
-  ShieldCheck,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
-export default function ProjectsPage() {
-  const projects = [
-    {
-      title: "Portfolio con animaciones avanzadas (Next.js + Tailwind)",
-      icon: <MonitorSmartphone className="w-10 h-10 text-emerald-400" />,
-      description:
-        "Página personal con fondo Aurora dinámico, animaciones tipo Samsung, cambios de rol automático, carrusel de tecnologías y scroll reveal.",
-      details: [
-        "Fondos generativos animados y suaves",
-        "RevealOnScroll con IntersectionObserver",
-        "Carrusel infinito de tecnologías principales",
-        "Microinteracciones en botones, cards y badges",
-      ],
-      link: "https://seba-portfolio-nine.vercel.app/",
-    },
-    {
-      title: "Sistema de Deploy 24/7 en Linux + Next.js",
-      icon: <Server className="w-10 h-10 text-cyan-400" />,
-      description:
-        "Despliegue profesional usando Linux, pnpm y systemd para mantener el portfolio siempre disponible en el puerto 3000.",
-      details: [
-        "pnpm build + start en modo producción",
-        "Servicio systemd con restart automático",
-        "Documentación interna del despliegue local",
-        "Integración con el servidor físico que ya tenés montado",
-      ],
-    },
-    {
-      title: "Integración SSH + GitHub (Workflow DevOps Base)",
-      icon: <GitBranch className="w-10 h-10 text-purple-400" />,
-      description:
-        "Configuración de claves SSH, push sin contraseñas, ramas de desarrollo y flujo seguro dev → preview → producción.",
-      details: [
-        "SSH Key configurada en el servidor y en GitHub",
-        "Rama dev para hacer pruebas sin romper producción",
-        "Preview automático en Vercel por cada push a dev",
-        "Merge controlado hacia main cuando el cambio está validado",
-      ],
-    },
-    {
-      title: "Laboratorio de Infraestructura 24/7",
-      icon: <Layers className="w-10 h-10 text-amber-400" />,
-      description:
-        "Entorno personal para practicar despliegue de servicios, paneles de administración, túneles y acceso remoto.",
-      details: [
-        "Contenedores Docker para servicios aislados",
-        "Panel Portainer para administración visual",
-        "Servicios siempre online para practicar monitoreo",
-        "Túneles Playit para exponer servicios hacia Internet",
-      ],
-    },
-    {
-      title: "Automatizaciones y fondos dinámicos",
-      icon: <Code2 className="w-10 h-10 text-pink-400" />,
-      description:
-        "Implementación de animaciones suaves, gradientes tipo Aurora y detalles visuales que mejoran la experiencia del usuario.",
-      details: [
-        "Cursor typing animado en el inicio",
-        "Textos con cambio de rol automático",
-        "Blobs animados que se mueven muy lento de fondo",
-        "Hover glow en tarjetas y componentes interactivos",
-      ],
-    },
-    {
-      title: "Redes y Servicios en entorno real",
-      icon: <Network className="w-10 h-10 text-sky-400" />,
-      description:
-        "Configuración de red para exponer servicios internos, pruebas con puertos, túneles y acceso remoto seguro.",
-      details: [
-        "Gestión de puertos para Next.js, Minecraft y otros servicios",
-        "Pruebas con diferentes puertos (3000, 3001, etc.)",
-        "Separación de entornos: pruebas vs producción",
-        "Documentación del comportamiento de los servicios",
-      ],
-    },
-    {
-      title: "Seguridad básica en servidores personales",
-      icon: <ShieldCheck className="w-10 h-10 text-lime-400" />,
-      description:
-        "Buenas prácticas iniciales para proteger accesos, tokens y despliegues en un entorno personal en crecimiento.",
-      details: [
-        "Uso de SSH en lugar de contraseñas planas",
-        "Revocación de tokens expuestos",
-        "Separación de cuentas y permisos",
-        "Primeros pasos hacia un entorno más seguro",
-      ],
-    },
-  ];
+type ProjectStatus = "En curso" | "Completado";
 
-  const roadmap = [
-    "Agregar monitoreo básico (logs, alertas simples, health checks).",
-    "Integrar pipeline de CI/CD para automatizar test + deploy.",
-    "Añadir más servicios en contenedores (bases de datos, paneles, bots).",
-    "Publicar proyectos adicionales de scripting en Python para automatizar tareas.",
-    "Documentar todo el laboratorio como si fuera un entorno de trabajo real.",
-  ];
+interface Project {
+  title: string;
+  summary: string;
+  description: string;
+  status: ProjectStatus;
+  tech: string[];
+  link?: string;
+}
 
+const projects: Project[] = [
+  {
+    title: "Portfolio Personal",
+    summary: "Sitio web moderno para mostrar mis proyectos.",
+    description:
+      "Portfolio desarrollado con Next.js, SCSS modular, animaciones suaves, optimización de imágenes y diseño responsive.",
+    status: "En curso",
+    tech: ["Next.js", "React", "Framer Motion", "SCSS", "TypeScript"],
+    link: "#",
+  },
+  {
+    title: "Infraestructura & Servidores",
+    summary: "Mini PC con Ubuntu dedicada a proyectos DevOps.",
+    description:
+      "Instalación de Ubuntu Server, SSH, Docker, Portainer, balanceo de puertos, firewall, screen, y despliegue de apps.",
+    status: "En curso",
+    tech: ["Ubuntu", "Docker", "Portainer", "Nginx", "SSH"],
+  },
+  {
+    title: "Servidor Minecraft Avanzado",
+    summary: "Servidor PaperMC con múltiples mundos y plugins.",
+    description:
+      "Creación de mundos planos, warps personalizados, plugins de economía, tiendas con cofres, permisos y AuthMe.",
+    status: "En curso",
+    tech: ["PaperMC", "WorldEdit", "LuckPerms", "Vault", "QuickShop"],
+  },
+  {
+    title: "Dashboard con Dashy",
+    summary: "Tablero para centralizar accesos a servicios.",
+    description:
+      "Dashy en Docker, totalmente configurado, estilos personalizados, accesos rápidos y monitoreo.",
+    status: "Completado",
+    tech: ["Dashy", "Docker", "YAML"],
+  },
+  {
+    title: "ESP32 Minecraft Server",
+    summary: "Servidor estilo Minecraft corriendo en un microcontrolador.",
+    description:
+      "Compilación con PlatformIO, conexión WiFi, debugging y pruebas sin cable USB usando alimentación externa.",
+    status: "En curso",
+    tech: ["ESP32", "PlatformIO", "C++", "Serial Monitor"],
+  },
+  {
+    title: "Sistemas de Datos / TMO",
+    summary: "Automatización del análisis de reportes de call center.",
+    description:
+      "Cálculo de TMO real incluyendo hold, comparación entre Hermes y reportes del cliente, y correcciones en hojas de cálculo.",
+    status: "Completado",
+    tech: ["Excel", "Google Sheets", "Análisis", "Lógica de Negocio"],
+  },
+  {
+    title: "UI / Motion Experiments",
+    summary: "Pruebas de animaciones avanzadas estilo Samsung.",
+    description:
+      "Scroll animations, parallax, fade sequences, componentes interactivos y microinteracciones visuales.",
+    status: "En curso",
+    tech: ["Framer Motion", "Intersection Observer", "SCSS"],
+  },
+  {
+    title: "Branding & Diseño",
+    summary: "Diseños visuales para panadería y redes.",
+    description:
+      "Ilustraciones de empaques, retoques de imágenes, creación de personajes, tipografía y estética minimalista.",
+    status: "Completado",
+    tech: ["Illustrator", "Photoshop", "Digital Art"],
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.13, duration: 0.55, ease: "easeOut" },
+  }),
+};
+
+const ProjectsPage = () => {
   return (
     <Layout>
-      <div className="flex flex-col gap-10 py-8">
-        {/* Encabezado */}
-        <RevealOnScroll>
-          <div className="flex items-center justify-between mb-2">
-            <Link
-              href="/"
-              className="text-sm text-emerald-300 hover:text-emerald-200 transition underline underline-offset-4"
-            >
-              ← Volver al inicio
-            </Link>
-            <span className="text-xs md:text-sm text-neutral-400">
-              Entorno en constante evolución · DevOps / Infra / Laboratorio personal
-            </span>
-          </div>
+      <main className="min-h-screen w-full flex flex-col items-center px-4 md:px-10 lg:px-24 pt-36 pb-20 bg-[#020617]">
 
-          <h1 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-emerald-300 to-cyan-400 bg-clip-text text-transparent">
-            Proyectos Destacados
-          </h1>
-          <p className="text-center text-neutral-300 max-w-3xl mx-auto mt-2">
-            Una colección de trabajo real en infraestructura, desarrollo,
-            automatización y despliegues modernos. Todo lo que aparece acá está
-            construido y probado sobre tu entorno real de laboratorio.
+        {/* Título */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl text-center mb-16"
+        >
+          <p className="text-sm uppercase tracking-[0.3em] text-sky-400 mb-3">
+            Mis proyectos
           </p>
-        </RevealOnScroll>
 
-        {/* Grid de proyectos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {projects.map((p, i) => (
-            <RevealOnScroll key={i}>
-              <div
-                suppressHydrationWarning
-                className="
-                  group relative overflow-hidden
-                  bg-neutral-900/50 border border-neutral-700 rounded-xl p-6 
-                  hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-500/10 
-                  transition-all duration-300 backdrop-blur-lg
-                  hover:-translate-y-1 hover:scale-[1.01]
-                "
-              >
-                {/* Barra de luz animada arriba */}
-                <span
-                  className="
-                    pointer-events-none absolute inset-x-0 -top-px h-px 
-                    bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent 
-                    opacity-0 group-hover:opacity-100 transition-opacity duration-500
-                  "
-                />
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-50 mb-6 drop-shadow-[0_0_20px_rgba(56,189,248,0.25)]">
+            PROYECTOS
+          </h1>
 
-                {/* Icono dentro de círculo animado */}
-                <div
-                  className="
-                    mb-4 inline-flex items-center justify-center rounded-full 
-                    border border-emerald-500/30 bg-emerald-500/10 p-3 
-                    group-hover:bg-emerald-500/20 group-hover:scale-110
-                    transition-all duration-300
-                  "
-                >
-                  {p.icon}
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed">
+            Acá podés ver todo lo que estuve construyendo: infraestructura,
+            desarrollo web, experimentación con hardware, diseño y proyectos
+            personales que voy actualizando constantemente.
+          </p>
+        </motion.section>
+
+        {/* Grid de tarjetas */}
+        <section className="w-full max-w-6xl grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+              variants={cardVariants}
+              className="group relative overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/60 backdrop-blur-xl p-6 flex flex-col gap-4 shadow-lg shadow-black/40"
+            >
+              {/* Efecto glow */}
+              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_65%)]" />
+
+              {/* Header */}
+              <div className="relative flex justify-between items-start">
+                <div>
+                  <h2 className="text-xl font-semibold text-slate-50">
+                    {project.title}
+                  </h2>
+                  <p className="text-xs text-slate-400">{project.summary}</p>
                 </div>
 
-                <h2 className="text-xl font-bold mb-2 text-emerald-300">
-                  {p.title}
-                </h2>
-                <p className="text-neutral-300 text-sm mb-4">{p.description}</p>
-
-                <ul className="list-disc list-inside text-neutral-400 text-sm space-y-1">
-                  {p.details.map((d, j) => (
-                    <li key={j}>{d}</li>
-                  ))}
-                </ul>
-
-                {p.link && (
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="
-                      inline-flex items-center gap-1 mt-4 text-emerald-300 
-                      hover:text-emerald-200 underline underline-offset-4 
-                      transition
-                    "
-                  >
-                    Ver proyecto →
-                  </a>
-                )}
+                <span
+                  className={`text-[0.65rem] px-3 py-1 rounded-full font-medium border
+                  ${
+                    project.status === "Completado"
+                      ? "bg-emerald-500/10 text-emerald-300 border-emerald-500/40"
+                      : "bg-amber-500/10 text-amber-300 border-amber-500/40"
+                  }`}
+                >
+                  {project.status}
+                </span>
               </div>
-            </RevealOnScroll>
-          ))}
-        </div>
 
-        {/* Roadmap / Próximos pasos */}
-        <RevealOnScroll>
-          <section className="max-w-4xl mx-auto mt-4 bg-neutral-900/60 border border-neutral-700 rounded-2xl p-6 md:p-8 backdrop-blur-lg">
-            <h2 className="text-2xl md:text-3xl font-bold text-emerald-300 mb-3">
-              Próximos pasos y roadmap
-            </h2>
-            <p className="text-neutral-300 text-sm mb-4">
-              Además de los proyectos que ya están funcionando, tengo una lista de
-              cosas que quiero seguir construyendo sobre este mismo laboratorio:
-            </p>
-            <ul className="list-disc list-inside text-neutral-300 text-sm space-y-2">
-              {roadmap.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          </section>
-        </RevealOnScroll>
-      </div>
+              {/* Descripción */}
+              <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Tecnologías */}
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-[0.65rem] px-3 py-1 rounded-full bg-slate-800/80 text-slate-200 border border-slate-700/70 group-hover:border-sky-400/60 group-hover:text-sky-200 transition"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Link */}
+              {project.link && (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="text-xs mt-1 text-sky-300 hover:text-sky-200 underline underline-offset-4"
+                >
+                  Ver proyecto ↗
+                </Link>
+              )}
+            </motion.article>
+          ))}
+        </section>
+      </main>
     </Layout>
   );
-}
+};
+
+export default ProjectsPage;
