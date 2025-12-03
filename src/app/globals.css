@@ -1,0 +1,343 @@
+@import "tailwindcss";
+
+
+/* Colores base del sitio */
+:root {
+  --background: #020617; /* bg-slate-950 */
+  --foreground: #e5e7eb; /* text-gray-200 */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Animación de flotar suave (círculo del inicio, etc.) */
+@keyframes float-slow {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-18px) translateX(6px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+/* Glow/pulso suave (puntito del logo, etc.) */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 18px 4px rgba(16, 185, 129, 0.35);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Pequeño temblor al hacer hover */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-1px) rotate(-0.5deg);
+  }
+  75% {
+    transform: translateY(1px) rotate(0.5deg);
+  }
+}
+
+.wiggle-hover:hover {
+  animation: wiggle 0.18s ease-in-out;
+}
+
+/* Fondo de puntitos animados */
+@keyframes bg-move {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-40px, -20px, 0);
+  }
+}
+
+.bg-animated-dots {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(148, 163, 184, 0.25) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+  animation: bg-move 30s linear infinite alternate;
+}
+
+/* Caret tipo "typing" */
+@keyframes caret-blink {
+  0%,
+  70% {
+    opacity: 1;
+  }
+  71%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.typing-text {
+  position: relative;
+}
+
+.typing-text::after {
+  content: "|";
+  position: absolute;
+  right: -5px;   /* mueve el cursor un poquito a la derecha del texto */
+  top: 0;
+  animation: caret-blink 0.7s infinite;
+}
+
+@keyframes caret-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+/* Slide-up para actividad reciente */
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slide-up-fade 0.5s ease-out both;
+}
+body {
+  background: radial-gradient(circle at top, #0a0f1f 10%, #05070d 90%) !important;
+  overflow-x: hidden;
+}
+/* Fondo general oscuro con leve degradado */
+body {
+  background: radial-gradient(circle at top, #050814 0%, #020308 40%, #000000 100%);
+}
+
+/* Cuadrícula / líneas animadas de fondo */
+.bg-grid-animated {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  /* dos capas de líneas finitas */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.25;
+
+  animation: grid-drift 45s linear infinite;
+}
+
+/* movimiento MUY suave de la grilla para que no distraiga */
+@keyframes grid-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-80px, -80px, 0) scale(1.02);
+  }
+}
+/* Fondo base */
+body {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #020617 0%, #02010a 40%, #000000 100%);
+}
+
+/* Capa de líneas animadas de fondo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* grid MUY visible para que se note el cambio */
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.22) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.45;
+
+  animation: grid-move 12s linear infinite;
+}
+
+@keyframes grid-move {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-80px, -80px, 0) scale(1.03);
+  }
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+/* Carrusel automático de tecnologías */
+.tech-marquee {
+  width: max-content;
+  animation: tech-marquee 28s linear infinite;
+}
+
+@keyframes tech-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+:root {
+  --bg-color-1: #020617; /* negro azulado */
+  --bg-color-2: #02081f;
+  --bg-color-3: #04151f;
+
+  /* acentos muy suaves en verde/cyan */
+  --bg-accent-1: rgba(34, 197, 94, 0.08);
+  --bg-accent-2: rgba(56, 189, 248, 0.06);
+}
+
+/* base general bien oscura */
+body {
+  background: radial-gradient(circle at top, var(--bg-color-2) 0, var(--bg-color-1) 50%, #000 100%);
+}
+
+/* FONDO MODERNO AURORA TECH */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* Degradado general moderno */
+  background: radial-gradient(circle at 20% 20%, #0d1b2a, #000 70%);
+  overflow: hidden;
+}
+
+/* aurora principal */
+.ambient-bg::before {
+  content: "";
+  position: absolute;
+  width: 90vw;
+  height: 90vw;
+  top: -20%;
+  left: -10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 170, 0.18), transparent 70%);
+  filter: blur(90px);
+  animation: aurora-1 45s ease-in-out infinite;
+}
+
+/* aurora secundaria */
+.ambient-bg::after {
+  content: "";
+  position: absolute;
+  width: 80vw;
+  height: 80vw;
+  bottom: -25%;
+  right: -15%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%);
+  filter: blur(80px);
+  animation: aurora-2 55s ease-in-out infinite;
+}
+
+/* movimientos lentos y elegantes */
+@keyframes aurora-1 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(6%, 4%, 0) scale(1.12); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes aurora-2 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-5%, -4%, 0) scale(1.1); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+/* blobs de luz muy suaves */
+.ambient-bg::before,
+.ambient-bg::after {
+  content: "";
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  border-radius: 999px;
+  filter: blur(60px);
+  opacity: 0.45;
+  mix-blend-mode: screen;
+}
+
+/* blob verdoso arriba a la izquierda */
+.ambient-bg::before {
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(circle, var(--bg-accent-1) 0, transparent 65%);
+  animation: float1 70s ease-in-out infinite;
+}
+
+/* blob celeste abajo a la derecha */
+.ambient-bg::after {
+  bottom: -20%;
+  right: -10%;
+  background: radial-gradient(circle, var(--bg-accent-2) 0, transparent 65%);
+  animation: float2 85s ease-in-out infinite;
+}
+
+/* animaciones MUY lentas para que no distraigan */
+@keyframes float1 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(8%, 4%, 0) rotate(8deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes float2 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(-6%, -4%, 0) rotate(-6deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+/* Corrección posición del cursor "typing" */
+.typing-text {
+  position: relative;
+  display: inline-block; /* hace que el ancho se ajuste al texto */
+}
+
+.typing-text::after {
+  content: "|";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -0.25em; /* pegadito al texto */
+  animation: caret-blink 0.7s steps(1) infinite;
+}
