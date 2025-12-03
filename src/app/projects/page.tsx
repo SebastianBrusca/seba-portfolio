@@ -54,16 +54,16 @@ const projects: Project[] = [
     summary: "Servidor estilo Minecraft corriendo en un microcontrolador.",
     description:
       "Compilación con PlatformIO, conexión WiFi, debugging y pruebas sin cable USB usando alimentación externa.",
-    status: "En curso",
+    status: "Completado",
     tech: ["ESP32", "PlatformIO", "C++", "Serial Monitor"],
   },
   {
-    title: "Sistemas de Datos / TMO",
-    summary: "Automatización del análisis de reportes de call center.",
+    title: "Sistemas & Automatización",
+    summary: "Gestión de servidores y optimización de procesos técnicos.",
     description:
-      "Cálculo de TMO real incluyendo hold, comparación entre Hermes y reportes del cliente, y correcciones en hojas de cálculo.",
+      "Configuración de servidores Linux, despliegue de contenedores con Docker/Portainer, administración de servidores de Minecraft (plugins, mundos, permisos), automatización de tareas y documentación de procedimientos.",
     status: "Completado",
-    tech: ["Excel", "Google Sheets", "Análisis", "Lógica de Negocio"],
+    tech: ["Infraestructura ligera", "Bash", "Docker & Portainer", "Linux / SSH"],
   },
   {
     title: "UI / Motion Experiments",
@@ -74,12 +74,12 @@ const projects: Project[] = [
     tech: ["Framer Motion", "Intersection Observer", "SCSS"],
   },
   {
-    title: "Branding & Diseño",
-    summary: "Diseños visuales para panadería y redes.",
+    title: "Infraestructura & Planos Técnicos",
+    summary: "Diseño y documentación de redes y arquitectura técnica.",
     description:
-      "Ilustraciones de empaques, retoques de imágenes, creación de personajes, tipografía y estética minimalista.",
+      "Elaboración de planos de cableado estructurado, diagramas de red, distribución de racks, canalizaciones y documentación técnica para proyectos de infraestructura.",
     status: "Completado",
-    tech: ["Illustrator", "Photoshop", "Digital Art"],
+    tech: ["AutoCAD", "Visio / Diagramas de red", "Modelado básico 2D"],
   },
 ];
 
