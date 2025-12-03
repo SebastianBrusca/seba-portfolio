@@ -69,3 +69,13 @@ Carrusel automático con las herramientas que uso a diario en mi laboratorio:
 
 ## 🏗 Estructura del proyecto
 
+/seba-portfolio
+├── src/
+│ ├── app/ ← páginas y layout global
+│ ├── components/ ← RevealOnScroll, Navbar, Carousel, etc.
+│ └── styles/
+├── public/ ← imágenes e íconos
+├── package.json
+├── README.md
+└── next.config.js
+
