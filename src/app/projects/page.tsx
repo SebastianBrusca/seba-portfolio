@@ -38,7 +38,7 @@ const projects: Project[] = [
     summary: "Servidor PaperMC con múltiples mundos y plugins.",
     description:
       "Creación de mundos planos, warps personalizados, plugins de economía, tiendas con cofres, permisos y AuthMe.",
-    status: "En curso",
+    status: "Completado",
     tech: ["PaperMC", "WorldEdit", "LuckPerms", "Vault", "QuickShop"],
   },
   {
