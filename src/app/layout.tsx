@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -16,19 +15,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="text-neutral-100 antialiased relative overflow-x-hidden">
-  {/* Fondo animado */}
-  <div className="ambient-bg" aria-hidden="true" />
+        {/* Fondo animado */}
+        <div className="ambient-bg" aria-hidden="true" />
 
-  {/* Navbar */}
-  <div className="relative z-20">
-    <Navbar />
-  </div>
-
-  {/* Contenido */}
-  <main className="relative z-10 pt-20">
-    {children}
-  </main>
-</body>
+        {/* Contenido */}
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   );
 }

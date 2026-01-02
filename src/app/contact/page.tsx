@@ -1,4 +1,5 @@
 "use client";
+import Layout from "@/components/Layout";
 
 const EMAIL = "sebastian.brusca@hotmail.com";
 const LINKEDIN = "https://www.linkedin.com/";
@@ -6,6 +7,7 @@ const GITHUB = "https://github.com/";
 
 export default function ContactPage() {
   return (
+   <Layout>
     <section className="min-h-screen px-6 py-16 text-white">
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
@@ -194,5 +196,6 @@ export default function ContactPage() {
         </div>
       </div>
     </section>
+   </Layout>
   );
 }
