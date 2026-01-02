@@ -2,7 +2,7 @@ export default function ContactPage() {
   return (
     <section className="min-h-screen px-6 py-20 text-white">
       <div className="max-w-3xl">
-        <h1 className="text-4xl font-bold mb-6">Contacto</h1>
+        <h1 className="text-4xl font-bold mb-6">Contacto 🔥🔥🔥</h1>
 
         <p className="text-gray-300 mb-10 leading-relaxed">
           ¿Querés hablar sobre infraestructura, servidores Linux, Docker,
