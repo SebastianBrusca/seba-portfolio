@@ -1,3 +1,5 @@
+"use client";
+
 const EMAIL = "sebastian.brusca@hotmail.com";
 const LINKEDIN = "https://www.linkedin.com/";
 const GITHUB = "https://github.com/";
