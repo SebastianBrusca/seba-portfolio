@@ -44,6 +44,7 @@ export default function ContactPage() {
                 <a
                   href={LINKEDIN}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-xl border border-sky-400/30 bg-black/20 px-5 py-4
                              hover:border-sky-400 hover:bg-sky-400/10 transition"
                 >
@@ -59,6 +60,7 @@ export default function ContactPage() {
                 <a
                   href={GITHUB}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-xl border border-violet-400/30 bg-black/20 px-5 py-4
                              hover:border-violet-400 hover:bg-violet-400/10 transition"
                 >
@@ -69,6 +71,18 @@ export default function ContactPage() {
                   <div className="text-xs text-gray-500 mt-2">
                     Código, infra, labs y automatizaciones.
                   </div>
+                </a>
+              </div>
+
+              {/* CV Button */}
+              <div className="mt-6">
+                <a
+                  href="/files/CV_Sebastian_Brusca.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200"
+                >
+                  Curriculum Vitae
                 </a>
               </div>
             </div>
