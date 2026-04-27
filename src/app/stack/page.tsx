@@ -41,6 +41,38 @@ const items = [
       "Infraestructura modular ampliable",
     ],
   },
+  {
+    title: "Homelab y Monitoreo",
+    description:
+      "Montaje de un laboratorio personal con múltiples PCs Linux, pantallas y automatización de monitoreo.",
+    details: [
+      "Programación de un switch desde cero",
+      "Configuración de dos pantallas para monitoreo de 3 PCs",
+      "Agente automático que instala y envía datos a la PC manager",
+      "PC manager alterna la información de monitoreo en las pantallas",
+    ],
+  },
+  {
+    title: "Cableado y Organización de Datacenter",
+    description:
+      "Trabajo en la infraestructura física del datacenter de manera organizada y documentada para futuro mantenimiento.",
+    details: [
+      "Cableado prolijo e identificado",
+      "Documentación completa de la infraestructura",
+      "Optimización para mantenimiento futuro",
+    ],
+  },
+  {
+    title: "Cámaras de Seguridad y NVR",
+    description:
+      "Instalación, configuración y alimentación de cámaras de seguridad mediante PoE en un NVR centralizado.",
+    details: [
+      "Instalación y cableado de múltiples cámaras",
+      "Configuración en NVR central",
+      "Alimentación de cámaras por PoE",
+      "Monitorización centralizada y segura",
+    ],
+  },
 ];
 
 export default function StackPage() {

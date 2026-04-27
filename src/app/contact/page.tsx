@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 
 const EMAIL = "sebastian.brusca@hotmail.com";
 const LINKEDIN = "https://www.linkedin.com/";
-const GITHUB = "https://github.com/";
+const GITHUB = "https://github.com/SebastianBrusca";
 
 export default function ContactPage() {
   return (
